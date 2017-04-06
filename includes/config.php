@@ -8,7 +8,7 @@ require 'includes/functions.php';
 
 $host = 'localhost';
 $user = 'root';
-$pass = '';
-$database = 'sessions';
+$pass = 'root';
+$database = 'sessions2';
 
 $dbh = connectDatabase($host, $database, $user, $pass);

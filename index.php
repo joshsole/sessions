@@ -2,7 +2,7 @@
 require 'includes/config.php';
 
 if (loggedIn()) {
-  redirect('dashboard.php');
+  redirect('index.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // First validation
   if (empty($_POST['username']) || empty($_POST['password'])) {
     addMessage('Please enter both fields!');
-    redirect('index.php');
+    redirect('login.php');
   }
 
   // Next try to get the user from the database
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     addMessage('You have been logged in');
     // Redirect to the dashboard
-    redirect('dashboard.php');
+    redirect('index.php');
   }
   else {
     addMessage('Username and password do not match our records');
